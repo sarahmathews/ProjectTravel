@@ -10,35 +10,36 @@ namespace ProjectSarah
     {
         static void Main(string[] args)
         {
-            /* create a class called AccountManager that stores the current Account */
-            /* create a method / property in AccountManager to set current account*/
+            Console.WriteLine("Welcome to Project Travel!");
+            Console.WriteLine("1. Create an account");
+            Console.WriteLine("2. Create an itinerary");
+            Console.WriteLine("0. Exit");
 
-            /* create an instance of AccountManager */
+            var option = Console.ReadLine();
+            switch (option)
+            {
+                case "1":
+                    Console.Write("What is your user name?");
+                    var accountName = Console.ReadLine();
 
-            var accountmanager1 = new AccountManager();
+                    var account1 = AccountManager.CreateAccount(accountName, accountPassword,
+                        email, city, AccountType.Free);
+                    Console.WriteLine("Account Name: {0}, Account Password: {1}, Email: {2}, City: {3}, Type of Account: {4}", 
+                        account1.AccountName,
+                    account1.AccountPassword, account1.Email, account1.City, account1.TypeOfAccount);
+                    break;
 
-            /* create accounts! -DONE  */
-            //creating an instance of account; a new object
-            var account1 = new Account();
-            account1.AccountName = "Sarah's Travel Itineraries";
-            account1.AccountPassword = "password1234";
-            account1.Email = "s.marie.mathews@gmail.com";
-            account1.City = "Seattle";
-            account1.TypeOfAccount = AccountType.Free;
+                case "2":
+                    break;
 
-            account1.AddAccountToAccountManager(accountmanager1);
+                case "0":
+                    Console.WriteLine("Good bye!");
+                    return;
 
-            //creating another instance of account
-            var account2 = new Account();
-            account2.AccountName = "Dan's Travel Itineraries";
-            account2.AccountPassword = "password5678";
-            account2.Email = "danielmacd@gmail.com";
-            account2.City = "Bozeman";
-            account2.TypeOfAccount = AccountType.Premium;
+                default:
+                    break;
+            }
 
-
-            account2.AddAccountToAccountManager(accountmanager1);
-            Console.WriteLine(account1.AccountName);
-        }
+         }
     }
 }

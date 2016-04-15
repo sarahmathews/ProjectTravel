@@ -11,28 +11,42 @@ namespace ProjectSarah
         Free,
         Premium
     }
-
-    class Account
+    /// <summary>
+    /// This is about a travel account where you should be able to create travel itineraries
+    /// </summary>
+    public class Account
     {
-        #region Properties
-        public string AccountName { get; set; }
-        public string AccountPassword { get; set; }
-        public string Email { get; set; }
-        public string City { get; set; }
-        public string ListOfFavorites { get; set; }
-        public AccountType TypeOfAccount { get; set; }
+        #region Variables
+        /*Not sure how to add this without assigning account numbers?*/
+        #endregion
 
+        #region Properties
+            /// <summary>
+            /// The user's screen name
+            /// </summary>
+        public string AccountName { get; set; }
+        /// <summary>
+        /// The user's password 
+        /// </summary>
+        public string AccountPassword { get; set; }
+        /// <summary>
+        /// User's email address
+        /// </summary>
+        public string Email { get; set; }
+        /// <summary>
+        /// City where the user currently resides
+        /// </summary>
+        public string City { get; set; }
+        /// <summary>
+        /// Account type enum; Free account or Premium account which is paid
+        /// </summary>
+        public AccountType TypeOfAccount { get; set; }
         #endregion
 
         #region Methods
-
-        
-        public void AddAccountToAccountManager(AccountManager accountmanager)
-        {
-            accountmanager.UpdateCurrentAccount(this);
         }
-
-        public void UpdateAccount
+    //not sure how to add a method for
+        }
         #endregion
 
     }

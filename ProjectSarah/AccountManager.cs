@@ -6,12 +6,45 @@ using System.Threading.Tasks;
 
 namespace ProjectSarah
 {
-    class AccountManager
+    public static class AccountManager
     {
-        private Account CurrentAccount { get; set; }
-        public void UpdateCurrentAccount(Account NewAccount)
+        /// <summary>
+        /// Create a new account
+        /// </summary>
+        /// <param name="accountName"></param>
+        /// <param name="accountPassword"></param>
+        /// <param name="email"></param>
+        /// <param name="city"></param>
+        /// <param name="typeOfAccount"></param>
+        /// <returns></returns>
+
+        public static Account CreateAccount(string accountName, string accountPassword,
+            string email, string city, AccountType typeOfAccount)
         {
-            this.CurrentAccount = NewAccount;
+            var account = new Account
+            {
+                AccountName = accountName,
+                AccountPassword = accountPassword,
+                Email = email,
+                City = city,
+                TypeOfAccount = typeOfAccount
+            };
+            return account;
+        }
+
+        public static Account AssociateItinerary(string itineraryDate, string itineraryTime,
+            string itineraryLocation)
+        {
+            var itinerary = new Itinerary
+            {
+                ItineraryDate = itineraryDate,
+                ItineraryTime = itineraryTime,
+                ItineraryLocation = itineraryLocation
+            };
+            return Account;
+
+            /* I'm not sure what should go here or if this is how to 
+            associate itineraries to accounts*/            
         }
     }
 }

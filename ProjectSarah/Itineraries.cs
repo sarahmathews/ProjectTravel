@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjectSarah
 {
-    class Itineraries
+    class Itinerary
     {
-        public string City { get; set; }
-        public string Date { get; set; }
-        public string DailyItinerary { get; set; }
+        public string ItineraryDate { get; set; }
+        public string ItineraryTime { get; set; }
+        public string ItineraryLocation { get; set; }
     }
 }
